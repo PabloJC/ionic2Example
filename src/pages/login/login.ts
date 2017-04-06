@@ -5,6 +5,7 @@ import { AlertController, LoadingController, NavController } from 'ionic-angular
 import { TabsPage } from '../tabs/tabs';
 
 import { UserService } from '../../services/user.service';
+import { DBService } from '../../services/db.service';
 
 @Component({
   selector: 'page-login',
@@ -18,8 +19,11 @@ export class LoginPage{
   constructor(private alertCtrl: AlertController,
   public loadingCtrl: LoadingController,
   public navCtrl: NavController,
-  private userService: UserService){
-
+  private userService: UserService,
+  private dbService: DBService){
+    dbService.openDatabase();
+    dbService.createTable();
+    console.log(dbService.getAll());
   }
 
 

@@ -14,6 +14,7 @@ import { LoginPage } from '../pages/login/login';
 import { Fav } from '../components/fav/fav';
 
 import { UserService } from '../services/user.service';
+import { DBService } from '../services/db.service';
 
 //refactor por router
 
@@ -51,7 +52,8 @@ var links = [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserService
+    UserService,
+    DBService
   ]
 })
 export class AppModule {}
